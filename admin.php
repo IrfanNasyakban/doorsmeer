@@ -68,8 +68,14 @@ if( empty( $_SESSION['id_user'] ) ){
 			case 'transaksi':
 				include "transaksi.php";
 				break;
+			case 'laporan':
+				include "laporan.php";
+				break;
 			case 'user':
 				include "user.php";
+				break;
+			case 'biaya':
+				include "biaya.php";
 				break;
 			case 'cetak':
 				include "cetak_nota.php";
@@ -98,17 +104,21 @@ if( empty( $_SESSION['id_user'] ) ){
       </div>
 	  <div class="jumbotron" style="color: #bfe1e7;">
 	  <div class="row text-center">
-  		<div class="col-md-4">
+  		<div class="col-md-3">
 		  <p>Irvan Nasyakban</p>
 		  <img src="image/irvan.png" style="width: 150px;">
 		</div>
-  		<div class="col-md-4">
+  		<div class="col-md-3">
 		  <p>Widia Hamsi</p>
           <img src="image/widia.png" style="width: 150px;">
 		</div>
-  		<div class="col-md-4">
+  		<div class="col-md-3">
 		  <p>Muhammad Ariansyah</p>
           <img src="image/ari.png" style="width: 150px;">
+		</div>
+		<div class="col-md-3">
+		  <p>Fannisa Nadira</p>
+          <img src="image/fannisa.png" style="width: 150px;">
 		</div>
 	  </div>
 	  </div>

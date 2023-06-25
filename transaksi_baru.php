@@ -61,7 +61,7 @@ if( empty( $_SESSION['id_user'] ) ){
 	<div class="form-group">
 		<label for="jenis" class="col-sm-2 control-label">Jenis Kendaraan</label>
 		<div class="col-sm-3">
-			<select name="jenis" class="form-control" id="jenis" required>
+			<select name="jenis" class="form-control" id="jenis" required onchange="updateBiaya()">
 			<option value="<?php echo $row['jenis']; ?>">--- Jenis Kendaraan ---</option>
 			<?php
 
@@ -77,7 +77,7 @@ if( empty( $_SESSION['id_user'] ) ){
 	<div class="form-group">
 		<label for="biaya" class="col-sm-2 control-label">Biaya</label>
 		<div class="col-sm-3">
-			<input type="number" class="form-control" id="biaya" name="biaya" required>
+			<input type="number" class="form-control" id="biaya" name="biaya" readonly>
 		</div>
 	</div>
 	<div class="form-group">
@@ -116,6 +116,19 @@ if( empty( $_SESSION['id_user'] ) ){
 }
 ?>
 <script>
+
+	function updateBiaya() {
+        var jenisKendaraan = document.getElementById("jenis").value;
+        var biayaInput = document.getElementById("biaya");
+
+        if (jenisKendaraan === "Sepeda Motor") {
+            biayaInput.value = 10000;
+        } else if (jenisKendaraan === "Mobil") {
+            biayaInput.value = 25000;
+        } else {
+            biayaInput.value = "";
+        }
+    }
 
   $(document).ready(function(){
 
